@@ -6,7 +6,7 @@ The purpose of the exercise is to predict which country the service user will ma
 - FR
 - IT
 
-The proposed solution is divides into:
+The proposed solution is divided into:
 
 ## 00: Instructions
 Problem explanation and evaluation methods.
@@ -25,8 +25,10 @@ Correlation between variables |  Age box plot
 :-------------------------:|:-------------------------:
 ![](assets/corr.png)  |  ![](assets/age_boxplot.png)
 
-Another problem was the existence of many missing values for the "age" and "first_affiliate_tracked" columns.
+Another problem found was the existence of many missing values for the "age" and "first_affiliate_tracked" columns.
 As "first_affiliate_tracked" is a categorical variable, the solution was to replace the missing values by a 'N/A' string.
+
+
 In the case of age, it was attempted to determine the missing values by training a linear regression using the other explanatory variables of the model. However, given the low correlation between these variables, the R2 score was extremely low and, at the end, it was decided to replace the missing values by the average of the distribution.
 
 ## 02: Pre processing
@@ -66,6 +68,7 @@ This notebook contains the comparison between the performance of the classifiers
 - Training of the models weighed by the proportion of existing elements in the class
 
 The Max_Depth training hyperparameter that limits the growth of the trees up to the overfitting limit was set using Grid Search.
+
 The comparison of these different settings was used to set the final model based on AUC and Log Loss as recommended by the instructions for the exercise.
 
 ## 04: Prediction
