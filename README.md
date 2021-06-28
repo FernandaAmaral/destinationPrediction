@@ -46,7 +46,7 @@ Then the timestamp was divided into separate columns of year, month, and day.
 
 Here the missing values are imputed by a new 'N/A' label, then the labels are replaced by numeric values using the Label Encoder of Scikit Learn.
 
-Initially, the approach considered was the creation of dummies variables, but as some features (such as language) have many unique values, this caused many columns to be created, lingering model training without improvement in the results.
+Initially, the approach considered was the creation of dummy variables, but as some features (such as language) have many unique values, this caused many columns to be created, lingering model training without improvement in the results.
 
 The proposed classifier is XGBOOST that is not impaired by the existence of encoded variables in the same feature, since it is done by parallel trees boosting and the tree type models can handle categorical variables.
 
